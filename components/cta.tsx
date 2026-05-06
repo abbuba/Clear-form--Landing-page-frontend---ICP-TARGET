@@ -1,40 +1,30 @@
 'use client';
 
 import Link from "next/link";
+import CalendlyButton from "@/components/calendly-button";
 
 export default function Cta() {
   return (
-    <section className="relative my-26">
-      {/* Subtle fading top separator */}
-      <div className="w-full h-px bg-linear-to-r from-transparent via-gray-300/60 to-transparent mb-16" />
-
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 text-center">
-        {/* Eyebrow */}
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-600 mb-4">
-          Limited Early Access
-        </p>
-
-        {/* Headline */}
-        <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-gray-900 mb-3 leading-tight">
-          Start measuring what matters.
+    <section className="bg-gray-900 py-20 md:py-28">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 text-center">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4 leading-tight">
+          Start Turning Feedback Into Decisions
         </h2>
-
-        <p className="text-gray-500 text-base max-w-md mx-auto mb-10">
-          Join teams already using Clearform to turn feedback into clear decisions.
+        <p className="text-lg text-gray-400 mb-10 max-w-xl mx-auto">
+          Stop guessing what is wrong. Start seeing it clearly.
         </p>
 
-        <Link href="/early-access">
-          <button className="inline-flex items-center gap-3 bg-gray-900 text-white px-9 py-4 rounded-xl font-semibold text-base tracking-wide shadow-md hover:bg-gray-800 transition-all duration-200 group">
-            Get Early Access
-            <span className="group-hover:translate-x-0.5 transition-transform duration-200 flex items-center">
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
-              </svg>
-            </span>
-          </button>
-        </Link>
-
-        <p className="text-xs text-gray-600 mt-4">Free during beta · No credit card needed</p>
+        <div className="flex flex-wrap items-center justify-center gap-4">
+          <CalendlyButton className="inline-flex items-center border border-gray-600 text-gray-200 hover:border-gray-400 hover:text-white font-semibold text-base px-6 py-3 rounded-lg transition-colors duration-150 bg-transparent cursor-pointer">
+            Book a demo
+          </CalendlyButton>
+          <Link
+            href="mailto:support@clearform.com"
+            className="text-base font-medium text-gray-400 hover:text-white transition-colors duration-150"
+          >
+            Talk to us
+          </Link>
+        </div>
       </div>
     </section>
   );

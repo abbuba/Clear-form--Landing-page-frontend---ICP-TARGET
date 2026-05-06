@@ -6,7 +6,7 @@ export default function FAQPage() {
   return (
     <main className="mx-auto min-h-screen w-full max-w-6xl px-4 sm:px-6 pt-24 pb-16">
       <section>
-        <FAQ title="FAQ" />
+        <FAQ />
       </section>
 
       <section className="mt-8 text-center">

@@ -1,206 +1,183 @@
 export const metadata = { title: 'Privacy Policy' };
 
+const sections = [
+  {
+    title: "1. Overview",
+    content: (
+      <>
+        <p>This Privacy Policy explains how Clearform collects, processes, and protects data.</p>
+        <p className="mt-3">Clearform helps teams collect structured feedback and improve response quality.</p>
+        <p className="mt-3">Website: <a href="https://clearform.com" className="text-blue-600 hover:underline">https://clearform.com</a><br />Contact: <a href="mailto:support@clearform.com" className="text-blue-600 hover:underline">support@clearform.com</a></p>
+      </>
+    ),
+  },
+  {
+    title: "2. Data Ownership",
+    content: (
+      <>
+        <p>All feedback data collected using Clearform belongs to the customer. Clearform does not claim ownership over:</p>
+        <ul className="list-disc pl-6 mt-3 space-y-1">
+          <li>User responses</li>
+          <li>Form data</li>
+          <li>Feedback content</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    title: "3. Role Under Data Protection Laws",
+    content: (
+      <>
+        <p>For the purposes of GDPR and similar regulations:</p>
+        <ul className="list-disc pl-6 mt-3 space-y-1">
+          <li>You are the Data Controller</li>
+          <li>Clearform acts as the Data Processor</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    title: "4. Data We Process",
+    content: (
+      <>
+        <p>Clearform may process:</p>
+        <ul className="list-disc pl-6 mt-3 space-y-1">
+          <li>User-submitted feedback</li>
+          <li>Form responses</li>
+          <li>Interaction metadata</li>
+        </ul>
+        <p className="mt-3">We do not intentionally collect sensitive personal data.</p>
+      </>
+    ),
+  },
+  {
+    title: "5. Purpose of Processing",
+    content: (
+      <>
+        <p>We process data only to:</p>
+        <ul className="list-disc pl-6 mt-3 space-y-1">
+          <li>Improve response quality</li>
+          <li>Structure feedback</li>
+          <li>Generate actionable signals</li>
+          <li>Provide product functionality</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    title: "6. AI Processing",
+    content: (
+      <>
+        <p>Clearform uses AI systems to:</p>
+        <ul className="list-disc pl-6 mt-3 space-y-1">
+          <li>Evaluate response quality</li>
+          <li>Suggest improvements</li>
+          <li>Structure feedback</li>
+        </ul>
+        <p className="mt-3">We do not use your data for:</p>
+        <ul className="list-disc pl-6 mt-2 space-y-1">
+          <li>Advertising</li>
+          <li>Profiling individuals</li>
+          <li>Selling to third parties</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    title: "7. Data Access",
+    content: <p>Clearform does not access or manually review your raw data. Processing is automated and limited to system functionality.</p>,
+  },
+  {
+    title: "8. Data Storage and Security",
+    content: (
+      <>
+        <p>We implement:</p>
+        <ul className="list-disc pl-6 mt-3 space-y-1">
+          <li>Encryption in transit and at rest</li>
+          <li>Access controls</li>
+          <li>Secure cloud infrastructure</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    title: "9. International Data Transfers",
+    content: (
+      <>
+        <p>If data is processed outside your country, we ensure appropriate safeguards, including:</p>
+        <ul className="list-disc pl-6 mt-3 space-y-1">
+          <li>Standard contractual protections</li>
+          <li>Secure processing environments</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    title: "10. Your Rights (GDPR and Similar Laws)",
+    content: (
+      <>
+        <p>You have the right to:</p>
+        <ul className="list-disc pl-6 mt-3 space-y-1">
+          <li>Access your data</li>
+          <li>Correct your data</li>
+          <li>Request deletion</li>
+          <li>Restrict processing</li>
+          <li>Export your data</li>
+        </ul>
+        <p className="mt-3">Requests can be made via <a href="mailto:support@clearform.com" className="text-blue-600 hover:underline">support@clearform.com</a></p>
+      </>
+    ),
+  },
+  {
+    title: "11. Data Retention",
+    content: <p>Data is retained only as necessary to provide the service. You may request deletion at any time.</p>,
+  },
+  {
+    title: "12. Subprocessors",
+    content: (
+      <>
+        <p>We may use subprocessors for:</p>
+        <ul className="list-disc pl-6 mt-3 space-y-1">
+          <li>Hosting</li>
+          <li>Storage</li>
+          <li>AI processing</li>
+        </ul>
+        <p className="mt-3">All subprocessors follow standard security practices.</p>
+      </>
+    ),
+  },
+  {
+    title: "13. Changes",
+    content: <p>We may update this policy as the product evolves.</p>,
+  },
+  {
+    title: "14. Contact",
+    content: (
+      <p>
+        Clearform<br />
+        Hyderabad, Telangana, India<br />
+        Email: <a href="mailto:support@clearform.com" className="text-blue-600 hover:underline">support@clearform.com</a><br />
+        Website: <a href="https://clearform.com" className="text-blue-600 hover:underline">https://clearform.com</a>
+      </p>
+    ),
+  },
+];
+
 export default function PrivacyPolicyPage() {
   return (
     <main className="max-w-3xl mx-auto py-24 px-6 text-gray-800 leading-relaxed">
-      <h1 className="text-4xl font-bold mb-4">Privacy Policy</h1>
-      <p className="text-gray-500 mb-12">Last Updated: February 23, 2026</p>
+      <h1 className="text-4xl font-extrabold mb-2 text-gray-900">Privacy Policy</h1>
+      <p className="text-gray-400 mb-14 text-sm">Last updated: May 2026</p>
 
-      <div className="space-y-8">
-
-        <section>
-          <h2 className="text-2xl font-semibold mt-8 mb-4">1. Introduction</h2>
-          <p>
-            Clearform ("Clearform", "we", "our", or "us") operates a response-first form and feedback platform
-            that enables organizations to collect structured responses and analyze insights.
-          </p>
-          <p className="mt-4">We are committed to protecting personal data in accordance with:</p>
-          <ul className="list-disc pl-6 space-y-2 mt-2">
-            <li>The Information Technology Act, 2000 (India)</li>
-            <li>The Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011</li>
-            <li>The General Data Protection Regulation (GDPR), where applicable</li>
-          </ul>
-          <p className="mt-4">This Privacy Policy explains how we collect, process, store, and safeguard personal data.</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mt-8 mb-4">2. Roles &amp; Data Responsibility</h2>
-          <p>Clearform operates as:</p>
-          <ul className="list-disc pl-6 space-y-2 mt-2">
-            <li><strong>Data Controller</strong> for account-related data (users who sign up for Clearform)</li>
-            <li><strong>Data Processor</strong> for form response data submitted to forms created by our customers</li>
-          </ul>
-          <p className="mt-4">
-            The customer creating the form is the Data Controller for response data. We process response data
-            strictly in accordance with customer instructions.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mt-8 mb-4">3. Information We Collect</h2>
-
-          <h3 className="text-lg font-semibold mt-6 mb-2">3.1 Account &amp; Registration Data</h3>
-          <ul className="list-disc pl-6 space-y-2">
-            <li>Name</li>
-            <li>Email address</li>
-            <li>Phone number (if provided)</li>
-            <li>Company name</li>
-            <li>Billing information</li>
-          </ul>
-
-          <h3 className="text-lg font-semibold mt-6 mb-2">3.2 Form Response Data</h3>
-          <p>Collected on behalf of customers, which may include:</p>
-          <ul className="list-disc pl-6 space-y-2 mt-2">
-            <li>Text responses</li>
-            <li>Ratings</li>
-            <li>Uploaded files (if enabled)</li>
-            <li>Contact details submitted via forms</li>
-          </ul>
-          <p className="mt-4">We do not determine how this data is used. The form owner is responsible for lawful data collection.</p>
-
-          <h3 className="text-lg font-semibold mt-6 mb-2">3.3 Technical &amp; Usage Data</h3>
-          <ul className="list-disc pl-6 space-y-2">
-            <li>IP address</li>
-            <li>Device information</li>
-            <li>Browser type</li>
-            <li>Log files</li>
-            <li>Cookies</li>
-            <li>Session data</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mt-8 mb-4">4. Legal Basis for Processing (GDPR)</h2>
-          <p>Where GDPR applies, we process data under:</p>
-          <ul className="list-disc pl-6 space-y-2 mt-2">
-            <li>Contractual necessity</li>
-            <li>Legitimate interests (service improvement, security)</li>
-            <li>Legal obligations</li>
-            <li>User consent (where required)</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mt-8 mb-4">5. Purpose of Processing</h2>
-          <p>We process data to:</p>
-          <ul className="list-disc pl-6 space-y-2 mt-2">
-            <li>Provide and maintain Clearform services</li>
-            <li>Authenticate users</li>
-            <li>Ensure platform security</li>
-            <li>Process payments</li>
-            <li>Improve performance and usability</li>
-            <li>Comply with legal obligations</li>
-          </ul>
-          <p className="mt-4">We do not sell personal data. We do not use response data for advertising.</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mt-8 mb-4">6. Sensitive Personal Data (India IT Rules)</h2>
-          <p>
-            We do not intentionally collect sensitive personal data unless explicitly submitted through a
-            customer's form.
-          </p>
-          <p className="mt-4">Customers are responsible for:</p>
-          <ul className="list-disc pl-6 space-y-2 mt-2">
-            <li>Obtaining lawful consent</li>
-            <li>Ensuring compliance with applicable regulations</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mt-8 mb-4">7. Data Sharing &amp; Sub-Processors</h2>
-          <p>We may share data with trusted third-party service providers, including:</p>
-          <ul className="list-disc pl-6 space-y-2 mt-2">
-            <li>Cloud hosting providers</li>
-            <li>Payment processors</li>
-            <li>Infrastructure providers</li>
-            <li>Analytics providers</li>
-          </ul>
-          <p className="mt-4">
-            All sub-processors are contractually obligated to protect data. We do not sell or trade personal data.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mt-8 mb-4">8. International Data Transfers</h2>
-          <p>
-            Data may be processed outside India. Where required, we ensure appropriate safeguards consistent
-            with GDPR standards.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mt-8 mb-4">9. Data Retention</h2>
-          <ul className="list-disc pl-6 space-y-2">
-            <li>Account data retained while active</li>
-            <li>Form response data retained until deleted by customer</li>
-            <li>Backup copies retained for limited recovery purposes</li>
-            <li>Upon account deletion, data will be removed within a reasonable timeframe, except where legally required</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mt-8 mb-4">10. Security Measures</h2>
-          <p>We implement reasonable technical and organizational measures including:</p>
-          <ul className="list-disc pl-6 space-y-2 mt-2">
-            <li>HTTPS encryption</li>
-            <li>Access controls</li>
-            <li>Secure cloud infrastructure</li>
-            <li>Limited internal data access</li>
-          </ul>
-          <p className="mt-4">However, no method of transmission over the Internet is 100% secure.</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mt-8 mb-4">11. User Rights</h2>
-          <p>Where applicable, users may:</p>
-          <ul className="list-disc pl-6 space-y-2 mt-2">
-            <li>Request access to personal data</li>
-            <li>Request correction</li>
-            <li>Request deletion</li>
-            <li>Object to processing</li>
-            <li>Request data portability</li>
-          </ul>
-          <p className="mt-4">
-            Requests can be sent to:{" "}
-            <a href="mailto:hello@clearform.in" className="text-blue-600 hover:underline">
-              hello@clearform.in
-            </a>
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mt-8 mb-4">12. Children's Privacy</h2>
-          <ul className="list-disc pl-6 space-y-2">
-            <li>Clearform is not intended for individuals under 18</li>
-            <li>We do not knowingly collect children's data</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mt-8 mb-4">13. Policy Updates</h2>
-          <ul className="list-disc pl-6 space-y-2">
-            <li>We may update this policy periodically</li>
-            <li>Changes will be posted with an updated effective date</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mt-8 mb-4">14. Contact</h2>
-          <p className="mt-2">
-            <strong>Clearform</strong><br />
-            Email:{" "}
-            <a href="mailto:hello@clearform.in" className="text-blue-600 hover:underline">
-              hello@clearform.in
-            </a>
-            <br />
-            Website:{" "}
-            <a href="https://clearform.in" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-              https://clearform.in
-            </a>
-          </p>
-        </section>
-
+      <div className="space-y-10">
+        {sections.map((s) => (
+          <section key={s.title}>
+            <h2 className="text-xl font-bold mb-3 text-gray-900">{s.title}</h2>
+            <div className="text-gray-600 text-base leading-relaxed space-y-2">
+              {s.content}
+            </div>
+          </section>
+        ))}
       </div>
     </main>
   );
