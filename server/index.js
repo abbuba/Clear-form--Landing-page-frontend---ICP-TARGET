@@ -61,7 +61,7 @@ app.post("/api/leads", async (req, res) => {
         await resend.emails.send({
           from: `Clearform <${fromEmail}>`,
           to: [validatedData.email],
-          subject: 'Welcome to Clearform Early Access! 🎉',
+          subject: 'Thanks for reaching out — Clearform',
           html: `
             <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9fafb; border-radius: 8px;">
               <div style="text-align: center; padding: 30px 0;">
@@ -73,7 +73,7 @@ app.post("/api/leads", async (req, res) => {
                 <h2 style="color: #111827; font-size: 24px; margin-top: 0; font-weight: 700;">Welcome, ${validatedData.name}! 🎉</h2>
                 
                 <p style="color: #4b5563; font-size: 16px; line-height: 1.6;">
-                  Thank you for claiming your spot on the <strong>Clearform Early Access</strong> list. We're thrilled to have you onboard!
+                  Thank you for getting in touch with <strong>Clearform</strong>. We&apos;re thrilled you reached out!
                 </p>
                 
                 <p style="color: #4b5563; font-size: 16px; line-height: 1.6;">
@@ -85,7 +85,7 @@ app.post("/api/leads", async (req, res) => {
                     💡 What's next?
                   </p>
                   <p style="color: #4b5563; font-size: 15px; margin-top: 8px; margin-bottom: 0; line-height: 1.5;">
-                    We're putting the finishing touches on our beta. Keep an eye on this inbox—we'll notify you the moment your account is ready to be activated.
+                    Our team will review your details and reply shortly with next steps for the pilot.
                   </p>
                 </div>
                 

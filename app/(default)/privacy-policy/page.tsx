@@ -1,3 +1,5 @@
+import { PageBackLink } from "@/components/ui/page-back-link";
+
 export const metadata = { title: 'Privacy Policy' };
 
 const sections = [
@@ -7,7 +9,7 @@ const sections = [
       <>
         <p>This Privacy Policy explains how Clearform collects, processes, and protects data.</p>
         <p className="mt-3">Clearform helps teams collect structured feedback and improve response quality.</p>
-        <p className="mt-3">Website: <a href="https://clearform.com" className="text-blue-600 hover:underline">https://clearform.com</a><br />Contact: <a href="mailto:support@clearform.com" className="text-blue-600 hover:underline">support@clearform.com</a></p>
+        <p className="mt-3">Website: <a href="https://clearform.in" className="text-blue-600 hover:underline">https://clearform.in</a><br />Contact: <a href="mailto:hello@clearform.in" className="text-blue-600 hover:underline">hello@clearform.in</a></p>
       </>
     ),
   },
@@ -60,6 +62,7 @@ const sections = [
           <li>Structure feedback</li>
           <li>Generate actionable signals</li>
           <li>Provide product functionality</li>
+          <li>Train and improve Clearform&apos;s AI models and related systems</li>
         </ul>
       </>
     ),
@@ -74,11 +77,14 @@ const sections = [
           <li>Suggest improvements</li>
           <li>Structure feedback</li>
         </ul>
+        <p className="mt-3">
+          Certain inputs processed through the service may be retained or aggregated (including in de-identified or limited forms) and used to train, evaluate, and improve our models and product features. Where feasible we limit exposure of directly identifiable personal data in such activities.
+        </p>
         <p className="mt-3">We do not use your data for:</p>
         <ul className="list-disc pl-6 mt-2 space-y-1">
-          <li>Advertising</li>
-          <li>Profiling individuals</li>
-          <li>Selling to third parties</li>
+          <li>Third-party advertising</li>
+          <li>Selling personal data to third parties</li>
+          <li>Unlawful profiling of individuals</li>
         </ul>
       </>
     ),
@@ -124,7 +130,7 @@ const sections = [
           <li>Restrict processing</li>
           <li>Export your data</li>
         </ul>
-        <p className="mt-3">Requests can be made via <a href="mailto:support@clearform.com" className="text-blue-600 hover:underline">support@clearform.com</a></p>
+        <p className="mt-3">Requests can be made via <a href="mailto:hello@clearform.in" className="text-blue-600 hover:underline">hello@clearform.in</a></p>
       </>
     ),
   },
@@ -156,8 +162,8 @@ const sections = [
       <p>
         Clearform<br />
         Hyderabad, Telangana, India<br />
-        Email: <a href="mailto:support@clearform.com" className="text-blue-600 hover:underline">support@clearform.com</a><br />
-        Website: <a href="https://clearform.com" className="text-blue-600 hover:underline">https://clearform.com</a>
+        Email: <a href="mailto:hello@clearform.in" className="text-blue-600 hover:underline">hello@clearform.in</a><br />
+        Website: <a href="https://clearform.in" className="text-blue-600 hover:underline">https://clearform.in</a>
       </p>
     ),
   },
@@ -166,6 +172,7 @@ const sections = [
 export default function PrivacyPolicyPage() {
   return (
     <main className="max-w-3xl mx-auto py-24 px-6 text-gray-800 leading-relaxed">
+      <PageBackLink className="mb-8" />
       <h1 className="text-4xl font-extrabold mb-2 text-gray-900">Privacy Policy</h1>
       <p className="text-gray-400 mb-14 text-sm">Last updated: May 2026</p>
 

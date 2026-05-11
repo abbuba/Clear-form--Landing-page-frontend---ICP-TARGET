@@ -1,79 +1,129 @@
+"use client";
+
 import Link from "next/link";
+import { Linkedin } from "lucide-react";
+import { Reveal } from "@/components/motion/reveal";
+import { SectionEyebrow } from "@/components/ui/section-eyebrow";
+import { SectionHeading } from "@/components/ui/section-heading";
+import { StickyNote } from "@/components/ui/sticky-note";
+
+const NOISE_ITEMS = [
+  "Thumbs up and down",
+  "Open text responses",
+  "Slack threads",
+  "Support tickets",
+];
+
+const QUOTES = [
+  { text: '"Not helpful"', rot: -2.5 },
+  { text: '"Wrong answer"', rot: 1.5 },
+  { text: '"Does not work"', rot: -1.5 },
+];
 
 export default function FounderSection() {
-  const noiseItems = [
-    "Thumbs up and down",
-    "Open text responses",
-    "Slack threads",
-    "Support tickets",
-  ];
-
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section id="founder" className="relative bg-white py-20 md:py-28">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
-        <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">
-          Founder
-        </p>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-8 leading-tight">
-          Built From a Problem We&apos;ve Seen Up Close
-        </h2>
+        <Reveal>
+          <SectionEyebrow>Founder</SectionEyebrow>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <SectionHeading className="mb-8">
+            Built from a problem we&apos;ve seen up close
+          </SectionHeading>
+        </Reveal>
 
-        <div className="grid md:grid-cols-[1fr_auto] gap-10 items-start">
-          <div className="space-y-5 max-w-2xl">
-            <p className="text-lg text-gray-600">Most AI teams are collecting feedback. But they can&apos;t use it.</p>
-            <p className="text-base text-gray-500">You&apos;ve seen it:</p>
+        <div className="grid items-start gap-10 md:grid-cols-[1fr_auto]">
+          <div className="max-w-2xl space-y-5">
+            <Reveal delay={0.1}>
+              <p className="text-lg text-gray-700">
+                Most AI teams are collecting feedback. But they can&apos;t use it.
+              </p>
+            </Reveal>
+            <Reveal delay={0.15}>
+              <p className="text-base text-gray-600">You&apos;ve seen it:</p>
+            </Reveal>
 
-            <div className="flex flex-wrap gap-2">
-              {['"Not helpful"', '"Wrong answer"', '"Does not work"'].map((q) => (
-                <span key={q} className="inline-block border border-gray-200 rounded-full px-4 py-1.5 text-sm text-gray-600 font-medium bg-gray-50">
-                  {q}
-                </span>
-              ))}
-            </div>
+            <Reveal delay={0.2}>
+              <ul className="flex list-none flex-wrap gap-3">
+                {QUOTES.map((q, i) => (
+                  <StickyNote key={q.text} text={q.text} rot={q.rot} index={i} />
+                ))}
+              </ul>
+            </Reveal>
 
-            <p className="text-base font-semibold text-gray-900">This is not feedback. It is noise.</p>
+            <Reveal delay={0.25}>
+              <p className="text-base font-semibold text-gray-900">This is not feedback. It&apos;s noise.</p>
+            </Reveal>
 
-            <p className="text-base text-gray-500 leading-relaxed">
-              If you are building AI products like copilots, chat interfaces, or LLM tools, your output quality depends on user feedback. But today, that feedback is scattered across:
-            </p>
+            <Reveal delay={0.3}>
+              <p className="text-base leading-relaxed text-gray-600">
+                If you&apos;re building AI products like copilots, chat interfaces, or LLM tools, your
+                output quality depends on user feedback. But today, that feedback is scattered across:
+              </p>
+            </Reveal>
 
-            <ul className="space-y-2 pl-1">
-              {noiseItems.map((item) => (
-                <li key={item} className="flex items-center gap-2.5 text-sm text-gray-500">
-                  <span className="w-1.5 h-1.5 rounded-full bg-gray-400 shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <Reveal delay={0.35}>
+              <ul className="space-y-2 pl-1">
+                {NOISE_ITEMS.map((item) => (
+                  <li key={item} className="flex items-center gap-2.5 text-sm text-gray-600">
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-gray-400" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
 
-            <p className="text-base text-gray-500 leading-relaxed">
-              It is inconsistent, unstructured, and difficult to act on. So even with a high volume of feedback, teams struggle to answer: <span className="font-semibold text-gray-800">What should we fix?</span>
-            </p>
+            <Reveal delay={0.4}>
+              <p className="text-base leading-relaxed text-gray-600">
+                It&apos;s inconsistent, unstructured, and difficult to act on. Even with high volume,
+                teams struggle to answer:{" "}
+                <span className="font-semibold text-gray-900">What should we fix?</span>
+              </p>
+            </Reveal>
 
-            <p className="text-base font-bold text-gray-900">Clearform solves this.</p>
+            <Reveal delay={0.45}>
+              <p className="text-base font-bold text-gray-900">Clearform solves this.</p>
+            </Reveal>
 
-            <div className="pt-2">
+            <Reveal delay={0.5}>
               <Link
                 href="https://www.linkedin.com/in/naveenkumar-k/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors"
+                className="group inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-800 shadow-sm transition-all hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50/40 hover:text-blue-700 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40"
               >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                </svg>
+                <Linkedin className="h-4 w-4" />
                 Connect on LinkedIn
+                <svg
+                  className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2.2}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M7 7h10v10" />
+                </svg>
               </Link>
-            </div>
+            </Reveal>
           </div>
 
-          {/* Founder avatar */}
-          <div className="flex flex-col items-center gap-3 md:items-end">
-            <div className="w-20 h-20 rounded-full bg-gray-900 flex items-center justify-center text-white text-2xl font-bold shrink-0">
-              NK
+          <Reveal delay={0.2}>
+            <div className="flex flex-col items-center gap-3 md:items-end">
+              <div className="relative">
+                <div
+                  className="absolute -inset-3 rounded-full bg-gradient-to-br from-[color:var(--color-brand-100)]/50 via-[color:var(--color-brand-50)]/35 to-transparent blur-xl"
+                  aria-hidden
+                />
+                <div className="relative flex h-24 w-24 items-center justify-center rounded-2xl bg-gradient-to-br from-gray-900 to-black text-2xl font-bold text-white shadow-xl ring-1 ring-white/10">
+                  NK
+                </div>
+              </div>
+              <p className="text-xs font-medium uppercase tracking-wider text-gray-400">
+                Founder, Clearform
+              </p>
             </div>
-            <p className="text-xs text-gray-400 font-medium">Founder, Clearform</p>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

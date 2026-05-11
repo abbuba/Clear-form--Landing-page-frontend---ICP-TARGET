@@ -1,3 +1,5 @@
+import { PageBackLink } from "@/components/ui/page-back-link";
+
 export const metadata = { title: 'Data Processing Agreement' };
 
 const sections = [
@@ -19,6 +21,7 @@ const sections = [
           <li>Improve feedback quality</li>
           <li>Structure responses</li>
           <li>Generate actionable signals</li>
+          <li>Train and improve Clearform&apos;s AI models (subject to the Privacy Policy and appropriate safeguards)</li>
         </ul>
       </>
     ),
@@ -130,8 +133,8 @@ const sections = [
       <p>
         Clearform<br />
         Hyderabad, Telangana, India<br />
-        Email: <a href="mailto:support@clearform.com" className="text-blue-600 hover:underline">support@clearform.com</a><br />
-        Website: <a href="https://clearform.com" className="text-blue-600 hover:underline">https://clearform.com</a>
+        Email: <a href="mailto:hello@clearform.in" className="text-blue-600 hover:underline">hello@clearform.in</a><br />
+        Website: <a href="https://clearform.in" className="text-blue-600 hover:underline">https://clearform.in</a>
       </p>
     ),
   },
@@ -140,6 +143,7 @@ const sections = [
 export default function DpaPage() {
   return (
     <main className="max-w-3xl mx-auto py-24 px-6 text-gray-800 leading-relaxed">
+      <PageBackLink className="mb-8" />
       <h1 className="text-4xl font-extrabold mb-2 text-gray-900">Data Processing Agreement</h1>
       <p className="text-gray-400 mb-14 text-sm">Last updated: May 2026</p>
 

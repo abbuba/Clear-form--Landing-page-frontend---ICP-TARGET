@@ -1,8 +1,13 @@
+import Link from "next/link";
+
+import { PageBackLink } from "@/components/ui/page-back-link";
+
 export const metadata = { title: 'About' };
 
 export default function AboutPage() {
   return (
     <main className="max-w-3xl mx-auto py-24 px-6 text-gray-800 leading-relaxed">
+      <PageBackLink className="mb-10" />
 
       {/* Header */}
       <div className="mb-16">
@@ -101,7 +106,7 @@ export default function AboutPage() {
           <h2 className="text-2xl font-semibold mb-4">Where we are now</h2>
           <div className="space-y-4 text-gray-600">
             <p>
-              We're currently in early access, shaped by conversations with 50+ founders and teams who shared
+              We&apos;re running a focused pilot program, shaped by conversations with 50+ founders and teams who shared
               their frustrations openly. Clearform is still evolving — thoughtfully, intentionally — with one goal:
             </p>
             <div className="rounded-2xl bg-gray-50 border border-gray-100 px-6 py-5">
@@ -117,12 +122,12 @@ export default function AboutPage() {
 
         {/* CTA */}
         <div className="pt-4 border-t border-gray-100">
-          <a
-            href="/early-access"
+          <Link
+            href="/contact"
             className="inline-block bg-gray-900 hover:bg-gray-800 text-white text-sm font-medium rounded-full px-6 py-3 transition-colors duration-200"
           >
-            Request Early Access →
-          </a>
+            Start a pilot →
+          </Link>
         </div>
 
       </div>

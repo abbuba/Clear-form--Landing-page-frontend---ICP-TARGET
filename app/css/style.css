@@ -10,7 +10,28 @@
 
 @theme {
   --font-poppins: Poppins, sans-serif;
+  --font-inter: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   --font-mono: Roboto Mono, monospace;
+
+  /* Brand (toned-down red) */
+  --color-brand: #E24A45;
+  --color-brand-50: #FFF2F2;
+  --color-brand-100: #FFE1E1;
+  --color-brand-200: #FFC6C6;
+  --color-brand-500: #E24A45;
+  --color-brand-600: #D23E39;
+  --color-brand-700: #B8332F;
+  --color-brand-glow: rgba(226, 74, 69, 0.28);
+  --color-ink: #0B0B0F;
+  --color-surface: #0F1117;
+  --color-line-dark: rgba(255, 255, 255, 0.08);
+  --section-title: #111827;
+  --section-muted: #4B5563;
+  --section-eyebrow: #B8332F;
+  --section-card-bg: #FFFFFF;
+  --section-card-border: #E5E7EB;
+  --section-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --section-shadow-md: 0 18px 40px -24px rgba(15, 23, 42, 0.16);
 
   --text-xs: 0.75rem;
   --text-xs--line-height: 1.5;
@@ -244,5 +265,16 @@
 
   html {
     scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-inter);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-poppins);
+    letter-spacing: -0.02em;
   }
 }

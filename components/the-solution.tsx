@@ -1,45 +1,76 @@
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
+import { BarChart3, MessageSquare, Zap } from "lucide-react";
+import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
+import { RedUnderline } from "@/components/ui/red-underline";
+import { SectionEyebrow } from "@/components/ui/section-eyebrow";
+import { SectionHeading } from "@/components/ui/section-heading";
+import { SectionLead } from "@/components/ui/section-lead";
+
+const STEPS = [
+  { Icon: MessageSquare, label: "User gives feedback" },
+  { Icon: Zap, label: "Clearform improves response in real time" },
+  { Icon: BarChart3, label: "You get structured, comparable signals" },
+];
+
 export default function TheSolution() {
-  const steps = [
-    { label: "User gives feedback" },
-    { label: "Clearform improves response in real time" },
-    { label: "You get structured, comparable signals" },
-  ];
+  const reducedMotion = useReducedMotion();
 
   return (
-    <section className="bg-white py-20 md:py-28">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6">
-        <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">
-          The Solution
-        </p>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
-          Fix Feedback at the Source
-        </h2>
-        <p className="text-lg text-gray-500 leading-relaxed mb-14 max-w-2xl">
-          Clearform improves feedback at the moment it is given. Instead of vague responses, users are guided to provide: clear context, specific issues, and actionable detail.
-        </p>
+    <section id="solution" className="relative bg-white py-20 md:py-28">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
+        <Reveal>
+          <SectionEyebrow>The Solution</SectionEyebrow>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <SectionHeading className="max-w-3xl">
+            Fix feedback at the <RedUnderline delay={0.4}>source.</RedUnderline>
+          </SectionHeading>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <SectionLead className="max-w-2xl mb-14">
+            Clearform improves feedback at the moment it&apos;s given. Instead of vague responses,
+            users are guided to provide clear context, specific issues, and actionable detail.
+          </SectionLead>
+        </Reveal>
 
-        {/* 3-step flow */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-          {steps.map((step, i) => (
-            <div key={i} className="flex sm:flex-col items-center gap-4 flex-1">
-              <div className="flex items-center gap-4 sm:flex-col sm:text-center">
-                <div className="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center text-sm font-bold shrink-0">
-                  {i + 1}
+        <Stagger className="grid gap-4 sm:grid-cols-3">
+          {STEPS.map(({ Icon, label }, i) => (
+            <StaggerItem key={label}>
+              <motion.div
+                whileHover={{ y: -3 }}
+                className="group relative h-full rounded-2xl border border-[color:var(--section-card-border)] bg-[color:var(--section-card-bg)] p-6 shadow-[var(--section-shadow-sm)] transition-all duration-200 hover:border-[color:var(--color-brand-100)] hover:shadow-[var(--section-shadow-md)]"
+              >
+                <div className="mb-4 flex items-center justify-between">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[color:var(--color-brand-50)] text-[color:var(--color-brand-600)] ring-1 ring-[color:var(--color-brand-100)]">
+                    <Icon className="h-5 w-5" strokeWidth={2.2} />
+                  </div>
+                  <span className="text-3xl font-extrabold text-gray-200 transition-colors group-hover:text-[color:var(--color-brand-100)]">
+                    0{i + 1}
+                  </span>
                 </div>
-                <p className="text-base font-semibold text-gray-800 sm:text-center">{step.label}</p>
-              </div>
-              {i < steps.length - 1 && (
-                <svg className="w-5 h-5 text-gray-300 shrink-0 sm:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              )}
-            </div>
+                <p className="text-base font-semibold leading-snug text-gray-900">{label}</p>
+                {i < STEPS.length - 1 ? (
+                  <motion.span
+                    aria-hidden
+                    initial={{ scaleX: reducedMotion ? 1 : 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: reducedMotion ? 0 : 0.45, delay: reducedMotion ? 0 : 0.25 + i * 0.08 }}
+                    className="absolute -right-2 top-8 hidden h-px w-4 origin-left bg-[color:var(--color-brand-200)] sm:block"
+                  />
+                ) : null}
+              </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
 
-        <p className="mt-12 text-sm font-semibold text-gray-400 uppercase tracking-wider">
-          Better input → structured signal → clear decisions
-        </p>
+        <Reveal delay={0.2}>
+          <p className="mt-12 text-sm font-semibold uppercase tracking-[0.18em] text-gray-400">
+            Better input ? structured signal ? clear decisions
+          </p>
+        </Reveal>
       </div>
     </section>
   );

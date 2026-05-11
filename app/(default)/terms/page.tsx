@@ -1,3 +1,5 @@
+import { PageBackLink } from "@/components/ui/page-back-link";
+
 export const metadata = { title: 'Terms of Service' };
 
 const sections = [
@@ -78,7 +80,7 @@ const sections = [
         <ul className="list-disc pl-6 mt-3 space-y-1">
           <li>The data you collect</li>
           <li>Compliance with applicable laws</li>
-          <li>Informing your users about data usage</li>
+          <li>Informing your users about data usage, including AI-assisted processing and how data may be used to improve models where described in our Privacy Policy</li>
         </ul>
       </>
     ),
@@ -141,8 +143,8 @@ const sections = [
       <p>
         Clearform<br />
         Hyderabad, Telangana, India<br />
-        Email: <a href="mailto:support@clearform.com" className="text-blue-600 hover:underline">support@clearform.com</a><br />
-        Website: <a href="https://clearform.com" className="text-blue-600 hover:underline">https://clearform.com</a>
+        Email: <a href="mailto:hello@clearform.in" className="text-blue-600 hover:underline">hello@clearform.in</a><br />
+        Website: <a href="https://clearform.in" className="text-blue-600 hover:underline">https://clearform.in</a>
       </p>
     ),
   },
@@ -151,6 +153,7 @@ const sections = [
 export default function TermsPage() {
   return (
     <main className="max-w-3xl mx-auto py-24 px-6 text-gray-800 leading-relaxed">
+      <PageBackLink className="mb-8" />
       <h1 className="text-4xl font-extrabold mb-2 text-gray-900">Terms of Service</h1>
       <p className="text-gray-400 mb-14 text-sm">Last updated: May 2026</p>
 

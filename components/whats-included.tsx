@@ -1,73 +1,117 @@
-import Link from "next/link";
+"use client";
 
-const columns = [
+import { motion, useReducedMotion } from "framer-motion";
+import { type LucideIcon, ArrowUpRight, Brain, Layers, LifeBuoy } from "lucide-react";
+import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
+import { SectionEyebrow } from "@/components/ui/section-eyebrow";
+import { SectionHeading } from "@/components/ui/section-heading";
+import { SectionLead } from "@/components/ui/section-lead";
+import { Button } from "@/components/ui/button";
+
+const COLUMNS: { Icon: LucideIcon; title: string; items: string[] }[] = [
   {
+    Icon: Layers,
     title: "Product",
-    icon: (
-      <svg className="w-5 h-5 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-      </svg>
-    ),
-    items: ["Up to 300 responses", "Unlimited forms", "Up to 5 users", "10GB storage"],
+    items: [
+      "Capture up to 300 responses per pilot",
+      "Unlimited forms with a single workspace",
+      "Keep every submission in one auditable place",
+    ],
   },
   {
-    title: "AI Capabilities",
-    icon: (
-      <svg className="w-5 h-5 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-      </svg>
-    ),
-    items: ["Response quality scoring", "AI suggestions and improvements", "Dynamic follow up questions"],
+    Icon: Brain,
+    title: "AI capabilities",
+    items: [
+      "Traffic-light scoring on every response (Red, Amber, Green)",
+      "Inline suggestions that tighten answers as people type",
+      "Automatic guardrails for vague or low-signal submissions",
+    ],
   },
   {
+    Icon: LifeBuoy,
     title: "Support",
-    icon: (
-      <svg className="w-5 h-5 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-      </svg>
-    ),
-    items: ["Guided setup", "Feedback structure design", "Help interpreting signals"],
+    items: [
+      "Guided setup so you launch in days, not weeks",
+      "Form design help aimed at clearer signal",
+      "Help turning raw responses into concrete next actions",
+    ],
   },
 ];
 
 export default function WhatsIncluded() {
+  const reducedMotion = useReducedMotion();
+
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section
+      id="whats-included"
+      aria-labelledby="whats-included-heading"
+      className="relative bg-white py-20 md:py-28"
+    >
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4 text-center">
-          What&apos;s Included
-        </p>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-12 leading-tight text-center">
-          Everything You Need to Run a Feedback Cycle
-        </h2>
+        <Reveal>
+          <div className="text-center">
+            <SectionEyebrow centered>What&apos;s included</SectionEyebrow>
+          </div>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <SectionHeading id="whats-included-heading" centered className="mx-auto mb-0 max-w-3xl">
+            Everything you need to run a feedback cycle
+          </SectionHeading>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <SectionLead centered className="mb-12 max-w-2xl sm:mb-14">
+            Product limits, AI scoring and guardrails, and guided support—packaged for one pilot.
+          </SectionLead>
+        </Reveal>
 
-        <div className="grid sm:grid-cols-3 gap-6 mb-12">
-          {columns.map((col) => (
-            <div key={col.title} className="bg-red-50 rounded-2xl p-7 border border-red-50">
-              <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center mb-5 shadow-sm">
-                {col.icon}
-              </div>
-              <h3 className="text-base font-bold text-gray-900 mb-4">{col.title}</h3>
-              <ul className="space-y-2.5">
-                {col.items.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-gray-600">
-                    <span className="w-1.5 h-1.5 rounded-full bg-red-400 shrink-0 mt-1.5" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <Stagger className="mb-12 grid max-w-md gap-6 sm:mx-auto sm:max-w-none sm:grid-cols-3">
+          {COLUMNS.map(({ Icon, title, items }) => (
+            <StaggerItem key={title}>
+              <motion.article
+                whileHover={reducedMotion ? undefined : { y: -4 }}
+                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-[color:var(--section-card-border)] bg-[color:var(--section-card-bg)] p-6 shadow-[var(--section-shadow-sm)] transition-all duration-300 hover:border-[color:var(--color-brand-200)] hover:shadow-[var(--section-shadow-md)] sm:p-7"
+              >
+                <div className="mb-5 flex items-center justify-between">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[color:var(--color-brand-50)] ring-1 ring-[color:var(--color-brand-100)]">
+                    <Icon
+                      className="h-5 w-5 text-[color:var(--color-brand-600)]"
+                      strokeWidth={2.2}
+                      aria-hidden
+                    />
+                  </div>
+                  <ArrowUpRight
+                    className="h-4 w-4 -translate-x-1 translate-y-1 text-gray-300 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:text-[color:var(--color-brand-500)] group-hover:opacity-100"
+                    aria-hidden
+                  />
+                </div>
+                <h3 className="mb-4 text-base font-bold tracking-tight text-gray-900">{title}</h3>
+                <ul className="space-y-3">
+                  {items.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-2.5 text-sm leading-relaxed text-gray-600"
+                    >
+                      <span
+                        aria-hidden
+                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[color:var(--color-brand-500)]"
+                      />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </motion.article>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
 
-        <div className="text-center">
-          <Link
-            href="/early-access"
-            className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-semibold text-base px-8 py-3.5 rounded-lg transition-colors duration-150"
-          >
-            Get Started
-          </Link>
-        </div>
+        <Reveal delay={0.15}>
+          <div className="text-center">
+            <Button href="/contact" variant="primary" size="lg" className="inline-flex">
+              Get started
+              <ArrowUpRight className="h-4 w-4" aria-hidden />
+            </Button>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

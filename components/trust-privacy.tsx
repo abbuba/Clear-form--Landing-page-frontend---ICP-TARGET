@@ -1,46 +1,74 @@
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
+import { ShieldCheck, Lock, Workflow } from "lucide-react";
+import { Reveal, Stagger, StaggerItem } from "@/components/motion/reveal";
+import { SectionEyebrow } from "@/components/ui/section-eyebrow";
+import { SectionHeading } from "@/components/ui/section-heading";
+
+const CARDS = [
+  {
+    Icon: ShieldCheck,
+    title: "No long-term commitment",
+    desc: "Pay once for a three-month pilot window — move at your own pace inside it. Subscription only if you continue afterward.",
+  },
+  {
+    Icon: Lock,
+    title: "No data access required",
+    desc: "We never access your data. Your data stays in your environment.",
+  },
+  {
+    Icon: Workflow,
+    title: "Works with your existing workflows",
+    desc: "Easy to integrate. No technical setup needed to start collecting better feedback.",
+  },
+];
+
 export default function TrustPrivacy() {
-  const cards = [
-    {
-      title: "No long term commitment",
-      desc: "Pay once, run your pilot at your own pace. No subscriptions required.",
-    },
-    {
-      title: "No data access required",
-      desc: "We never access your data. Your data stays in your environment.",
-    },
-    {
-      title: "Works with your existing workflows",
-      desc: "Easy to integrate. No technical setup needed to start collecting better feedback.",
-    },
-  ];
+  const reducedMotion = useReducedMotion();
 
   return (
-    <section className="bg-gray-50 py-20 md:py-28">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6">
-        <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4">
-          Trust &amp; Privacy
-        </p>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-12 leading-tight">
-          Built for Real Product Teams
-        </h2>
+    <section id="trust" className="relative bg-gradient-to-b from-white to-gray-50 py-20 md:py-28">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
+        <Reveal>
+          <SectionEyebrow>Trust &amp; Privacy</SectionEyebrow>
+        </Reveal>
+        <motion.div
+          initial={reducedMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-18%" }}
+          transition={{
+            duration: reducedMotion ? 0 : 0.55,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+        >
+          <SectionHeading className="mb-12 max-w-2xl">
+            Built for real product teams
+          </SectionHeading>
+        </motion.div>
 
-        <div className="grid sm:grid-cols-3 gap-6">
-          {cards.map((card) => (
-            <div key={card.title} className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
-              <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mb-4">
-                <svg className="w-4 h-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <h3 className="text-base font-bold text-gray-900 mb-2">{card.title}</h3>
-              <p className="text-sm text-gray-500 leading-relaxed">{card.desc}</p>
-            </div>
+        <Stagger className="grid gap-4 sm:grid-cols-3">
+          {CARDS.map(({ Icon, title, desc }) => (
+            <StaggerItem key={title}>
+              <motion.div
+                whileHover={{ y: -2 }}
+                className="group relative h-full overflow-hidden rounded-2xl border border-[color:var(--section-card-border)] bg-[color:var(--section-card-bg)] p-6 shadow-[var(--section-shadow-sm)] transition-all duration-200 hover:border-[color:var(--color-brand-100)] hover:shadow-[var(--section-shadow-md)]"
+              >
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-[color:var(--color-brand-50)] ring-1 ring-[color:var(--color-brand-100)] transition-all duration-200 group-hover:scale-105">
+                  <Icon className="h-5 w-5 text-[color:var(--color-brand-600)]" />
+                </div>
+                <h3 className="mb-2 text-base font-bold text-gray-900">{title}</h3>
+                <p className="text-sm leading-relaxed text-gray-600">{desc}</p>
+              </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
 
-        <p className="mt-8 text-sm text-gray-400 font-medium">
-          Your data stays in your environment
-        </p>
+        <Reveal delay={0.15}>
+          <p className="mt-8 text-sm font-medium text-gray-400">
+            Your data stays in your environment.
+          </p>
+        </Reveal>
       </div>
     </section>
   );
