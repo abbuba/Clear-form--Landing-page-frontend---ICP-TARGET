@@ -77,12 +77,12 @@ export default function Cta() {
             <CalendlyButton className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 text-base font-semibold text-white backdrop-blur transition-all duration-200 hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/10 active:scale-[0.98] cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40">
               Book a demo
             </CalendlyButton>
-            <Link
-              href="mailto:hello@clearform.in"
-              className="text-base font-medium text-white/60 transition-colors duration-200 hover:text-white hover:underline"
+            <button
+              onClick={() => window.open('https://cal.com/abbubakar-mohammed-clearform/30min', '_blank')}
+              className="text-base font-medium text-white/60 transition-colors duration-200 hover:text-white hover:underline cursor-pointer"
             >
               Talk to us
-            </Link>
+            </button>
           </div>
         </Reveal>
 

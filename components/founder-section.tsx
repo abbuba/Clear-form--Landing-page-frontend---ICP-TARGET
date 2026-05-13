@@ -116,12 +116,12 @@ export default function FounderSection() {
                   className="absolute -inset-3 rounded-full bg-gradient-to-br from-[color:var(--color-brand-100)]/50 via-[color:var(--color-brand-50)]/35 to-transparent blur-xl"
                   aria-hidden
                 />
-                <div className="relative flex h-24 w-24 overflow-hidden rounded-2xl shadow-xl ring-1 ring-white/10">
+                <div className="relative flex h-40 w-40 overflow-hidden rounded-2xl shadow-xl ring-1 ring-white/10">
                   <Image
                     src="/images/founder-abbu.jpg"
                     alt="Abbubakar Mohammed"
                     fill
-                    sizes="96px"
+                    sizes="160px"
                     className="object-cover"
                   />
                 </div>
