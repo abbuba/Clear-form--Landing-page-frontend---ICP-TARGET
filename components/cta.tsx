@@ -65,7 +65,8 @@ export default function Cta() {
         <Reveal delay={0.15}>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Button
-              href="/contact"
+              href="https://rzp.io/rzp/IGGfoRf"
+              external
               variant="secondary"
               size="lg"
               className="border-white/20 bg-white text-gray-900 shadow-[0_18px_40px_-16px_rgba(255,255,255,0.32)] hover:bg-white"

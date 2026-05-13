@@ -95,7 +95,8 @@ export default function HeroHome() {
               className="mb-4 flex flex-wrap items-center gap-3"
             >
               <Link
-                href="/contact"
+                href="/#pricing"
+                onClick={(e) => handleAnchor("/#pricing", e)}
                 className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl bg-gray-900 px-6 py-3.5 text-base font-semibold text-white shadow-[0_18px_40px_-16px_rgba(0,0,0,0.45)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-black hover:shadow-[0_22px_50px_-16px_rgba(0,0,0,0.55)] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[color:var(--color-brand-500)]/60"
               >
                 <span className="relative z-10">Start Pilot for $50</span>

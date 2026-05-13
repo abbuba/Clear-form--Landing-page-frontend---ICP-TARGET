@@ -106,7 +106,7 @@ export default function WhatsIncluded() {
 
         <Reveal delay={0.15}>
           <div className="text-center">
-            <Button href="/contact" variant="primary" size="lg" className="inline-flex">
+            <Button href="https://rzp.io/rzp/IGGfoRf" external variant="primary" size="lg" className="inline-flex">
               Get started
               <ArrowUpRight className="h-4 w-4" aria-hidden />
             </Button>

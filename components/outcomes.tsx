@@ -57,7 +57,7 @@ export default function Outcomes() {
             <p className="mb-8 text-2xl font-extrabold text-gray-900 sm:text-3xl">
               Not more feedback. <RedUnderline delay={0.25}>Better decisions.</RedUnderline>
             </p>
-            <Button href="/contact" variant="dark" size="lg">
+            <Button href="https://rzp.io/rzp/IGGfoRf" external variant="dark" size="lg">
               Start Pilot for $50
             </Button>
           </div>

@@ -8,13 +8,8 @@ const categories = ["All", "Interviews", "Inspiration", "Updates", "Product", "M
 
 export default function BlogPage() {
   return (
-<<<<<<< HEAD
-    <main className="relative mx-auto min-h-screen w-full max-w-4xl px-4 pb-24 pt-24 sm:px-6">
-      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-76 bg-linear-to-b from-slate-100 via-slate-50 to-transparent" aria-hidden="true" />
-=======
     <div className="relative min-h-screen w-full">
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-96 bg-linear-to-b from-slate-100 via-slate-50 to-transparent" aria-hidden="true" />
->>>>>>> c447c029302d073934bef26a467fabd6e504ecb1
 
       <div className="px-6 pt-6">
         <Link
@@ -53,17 +48,6 @@ export default function BlogPage() {
           </div>
         </section>
 
-<<<<<<< HEAD
-      <section className="mx-auto mt-8 grid max-w-3xl gap-6">
-        {posts.map((post) => (
-          <article
-            key={post.id}
-            className="group border-y rounded-4xl border-blue-900 pl-8 pt-5 pb-5"
-          >
-            <div className="flex items-center gap-2 text-sm text-slate-600">
-              <div className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-300 text-[10px] font-semibold text-slate-700">
-                {post.author.charAt(0)}
-=======
         <section className="mx-auto mt-8 grid max-w-3xl gap-6">
           {posts.map((post) => (
             <article
@@ -75,22 +59,13 @@ export default function BlogPage() {
                   {post.author.charAt(0)}
                 </div>
                 <span className="mt-1">{post.author}</span>
->>>>>>> c447c029302d073934bef26a467fabd6e504ecb1
               </div>
 
-<<<<<<< HEAD
-            <Link href={`/blog/${post.slug}`}>
-              <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-900 transition group-hover:text-blue-900">
-                {post.title}
-              </h2>
-            </Link>
-=======
               <Link href={`/blog/${post.slug}`}>
                 <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 transition group-hover:text-blue-900">
                   {post.title}
                 </h2>
               </Link>
->>>>>>> c447c029302d073934bef26a467fabd6e504ecb1
 
               <p className="mt-3 max-w-3xl text-base leading-relaxed text-slate-600">{post.subtitle}</p>
 

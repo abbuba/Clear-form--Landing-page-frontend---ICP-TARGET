@@ -109,7 +109,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
             <ul className="flex gap-2">
               <li>
                 <a
-                  href="https://www.linkedin.com/company/clearforms/?viewAsMember=true"
+                  href="https://www.linkedin.com/company/clearforms/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Clearform on LinkedIn"

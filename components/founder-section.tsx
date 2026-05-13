@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Linkedin } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
 import { SectionEyebrow } from "@/components/ui/section-eyebrow";
@@ -88,7 +89,7 @@ export default function FounderSection() {
 
             <Reveal delay={0.5}>
               <Link
-                href="https://www.linkedin.com/in/naveenkumar-k/"
+                href="https://www.linkedin.com/in/abbubakarr/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-semibold text-gray-800 shadow-sm transition-all hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50/40 hover:text-blue-700 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40"
@@ -109,19 +110,28 @@ export default function FounderSection() {
           </div>
 
           <Reveal delay={0.2}>
-            <div className="flex flex-col items-center gap-3 md:items-end">
+            <div className="flex flex-col items-center gap-2 md:items-end">
               <div className="relative">
                 <div
                   className="absolute -inset-3 rounded-full bg-gradient-to-br from-[color:var(--color-brand-100)]/50 via-[color:var(--color-brand-50)]/35 to-transparent blur-xl"
                   aria-hidden
                 />
-                <div className="relative flex h-24 w-24 items-center justify-center rounded-2xl bg-gradient-to-br from-gray-900 to-black text-2xl font-bold text-white shadow-xl ring-1 ring-white/10">
-                  NK
+                <div className="relative flex h-24 w-24 overflow-hidden rounded-2xl shadow-xl ring-1 ring-white/10">
+                  <Image
+                    src="/images/founder-abbu.jpg"
+                    alt="Abbubakar Mohammed"
+                    fill
+                    sizes="96px"
+                    className="object-cover"
+                  />
                 </div>
               </div>
-              <p className="text-xs font-medium uppercase tracking-wider text-gray-400">
-                Founder, Clearform
-              </p>
+              <div className="text-center md:text-right">
+                <h4 className="text-sm font-bold text-gray-900">Abbubakar Mohammed</h4>
+                <p className="text-xs font-medium uppercase tracking-wider text-gray-400">
+                  Founder, Clearform
+                </p>
+              </div>
             </div>
           </Reveal>
         </div>

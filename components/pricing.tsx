@@ -115,7 +115,8 @@ export default function Pricing() {
                 </p>
 
                 <Button
-                  href="/contact"
+                  href="https://rzp.io/rzp/IGGfoRf"
+                  external
                   variant="primary"
                   size="lg"
                   className="mb-8 flex w-full justify-center"
