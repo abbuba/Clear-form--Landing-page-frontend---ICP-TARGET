@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 
 export default function ContactClient() {
     const [copiedField, setCopiedField] = useState<"phone" | "email" | null>(null);
@@ -106,13 +105,13 @@ export default function ContactClient() {
                 </div>
 
                 <div>
-                    <h2 className="text-lg font-semibold text-gray-800 mb-2">Want to join the beta?</h2>
+                    <h2 className="text-lg font-semibold text-gray-800 mb-2">Interested in the pilot?</h2>
                     <p>
-                        Head over to our{" "}
-                        <Link href="/early-access" className="text-blue-600 hover:underline">
-                            Early Access page
-                        </Link>{" "}
-                        to request access and be part of shaping Clearform.
+                        Email{" "}
+                        <a href="mailto:hello@clearform.in?subject=Clearform%20pilot" className="text-blue-600 hover:underline">
+                            hello@clearform.in
+                        </a>{" "}
+                        or call us above — we&apos;ll walk you through next steps.
                     </p>
                 </div>
             </div>

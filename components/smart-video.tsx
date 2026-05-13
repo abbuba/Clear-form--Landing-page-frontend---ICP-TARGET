@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 
 interface SmartVideoProps {
@@ -39,6 +39,26 @@ export default function SmartVideo({
     rounded = 'rounded-2xl',
 }: SmartVideoProps) {
     const isSlow = useIsSlowConnection();
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    // Explicitly enforce muted and autoPlay for aggressive mobile browsers (e.g., iOS Safari)
+    useEffect(() => {
+        if (!videoRef.current) return;
+
+        // Force muted state via DOM (React sometimes drops it)
+        videoRef.current.defaultMuted = true;
+        videoRef.current.muted = true;
+
+        // Try to force play
+        const playPromise = videoRef.current.play();
+        if (playPromise !== undefined) {
+            playPromise.catch((error) => {
+                console.log("Autoplay was prevented:", error);
+                // On some strict browsers, if autoplay fails, we might show a play button here,
+                // but for a background video, failing silently and showing the poster is fine.
+            });
+        }
+    }, [src]);
 
     return (
         <div
@@ -62,15 +82,17 @@ export default function SmartVideo({
                 />
             ) : (
                 <video
+                    ref={videoRef}
                     autoPlay
                     muted
                     loop
                     playsInline
+                    controls={false}
                     preload="metadata"
                     poster={poster}
                     className="w-full h-full object-cover"
                 >
-                    <source src={`${src.replace('.mp4', '')}.webm`} type="video/webm" />
+                    <source src={src.replace('.mp4', '.webm')} type="video/webm" />
                     <source src={src} type="video/mp4" />
                 </video>
             )}

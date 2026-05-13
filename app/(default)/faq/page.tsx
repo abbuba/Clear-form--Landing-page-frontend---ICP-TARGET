@@ -1,12 +1,14 @@
 import FAQ from "@/components/faq";
+import { PageBackLink } from "@/components/ui/page-back-link";
 
 export const metadata = { title: 'Help & FAQ' };
 
 export default function FAQPage() {
   return (
     <main className="mx-auto min-h-screen w-full max-w-6xl px-4 sm:px-6 pt-24 pb-16">
+      <PageBackLink className="mb-6" />
       <section>
-        <FAQ title="FAQ" />
+        <FAQ />
       </section>
 
       <section className="mt-8 text-center">

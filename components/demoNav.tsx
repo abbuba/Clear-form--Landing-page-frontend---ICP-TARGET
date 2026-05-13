@@ -6,19 +6,19 @@ import SmartVideo from '@/components/smart-video';
 const videoData = {
   monitor: {
     label: 'Monitor',
-    videoSrc: '/videos/Trends.mp4',
+    videoSrc: '/videos/Trends.mp4?v=2',
     title: 'Monitor Real Signals',
     description: '',
   },
   measure: {
     label: 'Measure',
-    videoSrc: '/videos/PerformanceSnapshot.mp4',
+    videoSrc: '/videos/PerformanceSnapshot.mp4?v=2',
     title: 'Measure What Matters',
     description: '',
   },
   act: {
     label: 'Act',
-    videoSrc: '/videos/inbox.mp4',
+    videoSrc: '/videos/inbox.mp4?v=2',
     title: 'Act with Confidence',
     description: '',
   },

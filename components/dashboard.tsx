@@ -15,7 +15,7 @@ export default function Dashboard() {
             data-aos-duration="1100"
           >
             <SmartVideo
-              src="/videos/Dashboard.mp4"
+              src="/videos/Dashboard.mp4?v=2"
               aspectRatio="16/9"
               rounded="rounded-2xl"
             />
