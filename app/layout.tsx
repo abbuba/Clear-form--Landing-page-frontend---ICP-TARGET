@@ -59,6 +59,9 @@ export const metadata = {
     icon: "/icon.png",
     shortcut: "/favicon.ico",
   },
+  other: {
+    "facebook-domain-verification": "n6fpdrbu601cwozfqo1kcn593j28lt",
+  },
 };
 
 export default function RootLayout({
