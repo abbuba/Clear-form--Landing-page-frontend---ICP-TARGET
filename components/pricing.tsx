@@ -13,6 +13,7 @@ import {
   PILOT_CTA_LABEL,
   PILOT_PRICE_LINE,
   PILOT_PRICE_USD_LABEL,
+  PILOT_SUBLINE,
   PILOT_TERMS_LINE,
 } from "@/lib/pricing";
 
@@ -78,8 +79,11 @@ export default function Pricing() {
                   <span className="text-sm font-semibold text-gray-400">one-time</span>
                 </div>
                 <p className="mx-auto mb-1 max-w-xs text-xs text-gray-500">{PILOT_PRICE_LINE}</p>
-                <p className="mx-auto mb-6 max-w-sm text-sm leading-snug text-gray-600">
+                <p className="mx-auto mb-1 max-w-sm text-sm leading-snug text-gray-700">
                   {PILOT_TERMS_LINE}
+                </p>
+                <p className="mx-auto mb-5 max-w-sm text-xs leading-relaxed text-gray-500">
+                  {PILOT_SUBLINE}
                 </p>
 
                 <Button
