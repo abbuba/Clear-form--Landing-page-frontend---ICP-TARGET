@@ -7,6 +7,7 @@ import { SectionEyebrow } from "@/components/ui/section-eyebrow";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { SectionLead } from "@/components/ui/section-lead";
 import { Button } from "@/components/ui/button";
+import { PILOT_CHECKOUT_URL } from "@/lib/pricing";
 
 const COLUMNS: { Icon: LucideIcon; title: string; items: string[] }[] = [
   {
@@ -106,7 +107,7 @@ export default function WhatsIncluded() {
 
         <Reveal delay={0.15}>
           <div className="text-center">
-            <Button href="/contact" variant="primary" size="lg" className="inline-flex">
+            <Button href={PILOT_CHECKOUT_URL} external variant="primary" size="lg" className="inline-flex">
               Get started
               <ArrowUpRight className="h-4 w-4" aria-hidden />
             </Button>

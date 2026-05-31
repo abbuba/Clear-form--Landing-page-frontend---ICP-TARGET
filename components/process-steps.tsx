@@ -109,7 +109,7 @@ export default function ProcessSteps() {
             }}
             className="grid list-none grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-5 md:gap-4"
           >
-            {STEPS.map(({ num, title, desc, Icon }, i) => (
+            {STEPS.map(({ num, title, desc, Icon }) => (
               <motion.li
                 key={num}
                 variants={{
@@ -138,19 +138,6 @@ export default function ProcessSteps() {
                     {desc}
                   </p>
                 </div>
-                {i < STEPS.length - 1 ? (
-                  <motion.span
-                    aria-hidden
-                    initial={{ scaleX: reducedMotion ? 1 : 0 }}
-                    whileInView={{ scaleX: 1 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration: reducedMotion ? 0 : 0.45,
-                      delay: reducedMotion ? 0 : 0.25 + i * 0.08,
-                    }}
-                    className="absolute -right-2 top-[2.125rem] hidden h-px w-4 origin-left bg-gray-300 sm:block"
-                  />
-                ) : null}
               </motion.li>
             ))}
           </motion.ol>

@@ -7,6 +7,7 @@ import CalendlyButton from "@/components/calendly-button";
 import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
 import { RedUnderline } from "@/components/ui/red-underline";
+import { PILOT_CTA_LABEL, PILOT_CHECKOUT_URL } from "@/lib/pricing";
 
 export default function Cta() {
   const reducedMotion = useReducedMotion();
@@ -65,12 +66,13 @@ export default function Cta() {
         <Reveal delay={0.15}>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Button
-              href="/contact"
+              href={PILOT_CHECKOUT_URL}
+              external
               variant="secondary"
               size="lg"
               className="border-white/20 bg-white text-gray-900 shadow-[0_18px_40px_-16px_rgba(255,255,255,0.32)] hover:bg-white"
             >
-              Start pilot for $50
+              {PILOT_CTA_LABEL}
               <ArrowRight className="h-4 w-4" />
             </Button>
             <CalendlyButton className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 text-base font-semibold text-white backdrop-blur transition-all duration-200 hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/10 active:scale-[0.98] cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40">
@@ -83,12 +85,6 @@ export default function Cta() {
               Talk to us
             </Link>
           </div>
-        </Reveal>
-
-        <Reveal delay={0.2}>
-          <p className="mt-10 text-xs uppercase tracking-[0.18em] text-white/45">
-            No subscription · No commitment · Yours forever
-          </p>
         </Reveal>
       </div>
     </section>

@@ -49,7 +49,7 @@ export default function DefaultLayout({
           {children}
         </motion.main>
       </AnimatePresence>
-      <Footer border={true} />
+      <Footer />
     </>
   );
 }

@@ -7,6 +7,7 @@ import { RedUnderline } from "@/components/ui/red-underline";
 import { SectionEyebrow } from "@/components/ui/section-eyebrow";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Button } from "@/components/ui/button";
+import { PILOT_CTA_LABEL_TITLE, PILOT_CHECKOUT_URL } from "@/lib/pricing";
 
 const ITEMS = [
   { Icon: Target, text: "Identify the top issues affecting your AI outputs" },
@@ -57,8 +58,8 @@ export default function Outcomes() {
             <p className="mb-8 text-2xl font-extrabold text-gray-900 sm:text-3xl">
               Not more feedback. <RedUnderline delay={0.25}>Better decisions.</RedUnderline>
             </p>
-            <Button href="/contact" variant="dark" size="lg">
-              Start Pilot for $50
+            <Button href={PILOT_CHECKOUT_URL} external variant="dark" size="lg">
+              {PILOT_CTA_LABEL_TITLE}
             </Button>
           </div>
         </Reveal>

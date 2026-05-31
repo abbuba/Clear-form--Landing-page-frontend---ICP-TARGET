@@ -1,7 +1,8 @@
 import "./css/style.css";
 
 import { Poppins, Inter } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
+import { PILOT_PRICE_USD_LABEL } from "@/lib/pricing";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -23,7 +24,7 @@ export const metadata = {
     default: "Clearform | Turn user feedback into clear product decisions",
   },
   description:
-    "Clearform improves response quality at the source, delivering structured, decision-ready feedback for AI product teams. Run a $50 pilot — three months of included access.",
+    `Clearform improves response quality at the source, delivering structured, decision-ready feedback for AI product teams. Run a ${PILOT_PRICE_USD_LABEL} pilot — three months of included access.`,
   keywords: [
     "AI feedback",
     "structured feedback",
@@ -36,7 +37,7 @@ export const metadata = {
     type: "website",
     title: "Clearform | Turn user feedback into clear product decisions",
     description:
-      "Most AI teams collect feedback. Few can use it. Clearform improves response quality at the source. Run a $50 pilot.",
+      `Most AI teams collect feedback. Few can use it. Clearform improves response quality at the source. Run a ${PILOT_PRICE_USD_LABEL} pilot.`,
     siteName: "Clearform",
     locale: "en_US",
     images: [
