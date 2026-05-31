@@ -2,7 +2,7 @@ export const PILOT_PRICE_USD = 34.99;
 export const PILOT_PRICE_USD_LABEL = "$34.99";
 export const PILOT_PRICE_INR = 3149;
 
-export const PILOT_CHECKOUT_URL = "https://rzp.io/rzp/IGGfoRf";
+export const PILOT_CHECKOUT_URL = "https://rzp.io/rzp/KkCHRnt";
 
 export const PILOT_CTA_LABEL = `Start pilot for ${PILOT_PRICE_USD_LABEL}`;
 export const PILOT_CTA_LABEL_TITLE = `Start Pilot for ${PILOT_PRICE_USD_LABEL}`;
