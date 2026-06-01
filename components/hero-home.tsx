@@ -9,6 +9,7 @@ import BlurText from "@/components/blur-text";
 import { RedUnderline } from "@/components/ui/red-underline";
 import { StickyNote } from "@/components/ui/sticky-note";
 import { useSmoothAnchor } from "@/lib/hooks/use-smooth-anchor";
+import { CAL_TALK_URL } from "@/lib/booking";
 import { PILOT_CTA_LABEL_TITLE, PILOT_CHECKOUT_URL } from "@/lib/pricing";
 
 const LightRays = dynamic(() => import("@/components/light-rays"), { ssr: false });
@@ -148,7 +149,9 @@ export default function HeroHome() {
                 Book a demo
               </CalendlyButton>
               <Link
-                href="mailto:hello@clearform.in"
+                href={CAL_TALK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-sm font-medium text-gray-500 transition-colors duration-150 hover:text-gray-900 hover:underline"
               >
                 Talk to us
