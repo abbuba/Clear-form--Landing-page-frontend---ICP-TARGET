@@ -7,6 +7,7 @@ import CalendlyButton from "@/components/calendly-button";
 import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
 import { RedUnderline } from "@/components/ui/red-underline";
+import { CAL_TALK_URL } from "@/lib/booking";
 import { PILOT_CTA_LABEL, PILOT_CHECKOUT_URL } from "@/lib/pricing";
 
 export default function Cta() {
@@ -79,7 +80,9 @@ export default function Cta() {
               Book a demo
             </CalendlyButton>
             <Link
-              href="mailto:hello@clearform.in"
+              href={CAL_TALK_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-base font-medium text-white/60 transition-colors duration-200 hover:text-white hover:underline"
             >
               Talk to us
